@@ -9,45 +9,45 @@ import { Suspense } from "react"
  * You can delete everything in here and start from scratch if you like.
  */
 
-const UserInfo = () => {
-  const currentUser = useCurrentUser()
-  const [logoutMutation] = useMutation(logout)
+// const UserInfo = () => {
+//   const currentUser = useCurrentUser()
+//   const [logoutMutation] = useMutation(logout)
 
-  if (currentUser) {
-    return (
-      <>
-        <button
-          className="button small"
-          onClick={async () => {
-            await logoutMutation()
-          }}
-        >
-          Logout
-        </button>
-        <div>
-          User id: <code>{currentUser.id}</code>
-          <br />
-          User role: <code>{currentUser.role}</code>
-        </div>
-      </>
-    )
-  } else {
-    return (
-      <>
-        <Link href="/signup">
-          <a className="button small">
-            <strong>Sign Up</strong>
-          </a>
-        </Link>
-        <Link href="/login">
-          <a className="button small">
-            <strong>Login</strong>
-          </a>
-        </Link>
-      </>
-    )
-  }
-}
+//   if (currentUser) {
+//     return (
+//       <>
+//         <button
+//           className="button small"
+//           onClick={async () => {
+//             await logoutMutation()
+//           }}
+//         >
+//           Logout
+//         </button>
+//         <div>
+//           User id: <code>{currentUser.id}</code>
+//           <br />
+//           User role: <code>{currentUser.role}</code>
+//         </div>
+//       </>
+//     )
+//   } else {
+//     return (
+//       <>
+//         <Link href="/signup">
+//           <a className="button small">
+//             <strong>Sign Up</strong>
+//           </a>
+//         </Link>
+//         <Link href="/login">
+//           <a className="button small">
+//             <strong>Login</strong>
+//           </a>
+//         </Link>
+//       </>
+//     )
+//   }
+// }
 
 const Home: BlitzPage = () => {
   return (
@@ -60,9 +60,7 @@ const Home: BlitzPage = () => {
           <strong>Congrats!</strong> Your app is ready, including user sign-up and log-in.
         </p>
         <div className="buttons" style={{ marginTop: "1rem", marginBottom: "1rem" }}>
-          <Suspense fallback="Loading...">
-            <UserInfo />
-          </Suspense>
+          <Suspense fallback="Loading...">{/* <UserInfo /> */}</Suspense>
         </div>
         <p>
           <strong>
